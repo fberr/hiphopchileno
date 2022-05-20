@@ -39,7 +39,7 @@ box-shadow: 0px 10px 19px 14px rgba(0,0,0,0.64);
 
 
     .modal-content { background-color: #000; }
-    .modal-title { color: #fff; font-family: 'Amatic SC', cursive; font-size: 1.8rem;     line-height: 2rem;}
+    .modal-title { color: #fff; font-family: 'Amatic SC', cursive; font-size: 1.8rem;     line-height: 2rem; font-weight: bold;}
 
 
 .modal .spinner-border {
@@ -64,7 +64,7 @@ box-shadow: 0px 10px 19px 14px rgba(0,0,0,0.64);
     font-family: 'Amatic SC', cursive;
     font-size: 1.6rem;
     padding: 3px;
-    border-radius: 0; border: none; transition: all .2s ease-in-out; background-color: #8d0404;}
+    border-radius: 0; border: none; transition: all .2s ease-in-out; background-color: #8d0404; font-weight: bold;}
     .btn-danger.next:hover { transform: scale(.91); background-color: #d00000;  }
 .btn-danger.next:focus { box-shadow: none; }
     
