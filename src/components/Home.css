@@ -157,7 +157,7 @@ body {
     height: 0;
     overflow: hidden;
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     #posts a {
        min-height: 25vh;
    }
