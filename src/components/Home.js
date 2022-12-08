@@ -10,7 +10,11 @@ import { Provider } from './DataContext';
 
 export default function Home() {
 
+   
+
 const [post, setPost] = useState();
+
+
 const [token, setToken] = useState([]);
 const [info, setInfo] = useState(null);
 const [modal, setModal] = useState(null)
@@ -18,13 +22,22 @@ const exampleModal = useRef();
 
 
 
+
+
+
+
+
+
     const getApiData = async () => {
         const response = await fetch(
-          "https://www.googleapis.com/blogger/v3/blogs/4209688436429267338/posts?labels=hip+hop+chileno,videos&maxResults=12&nextPageToken&key=AIzaSyBenGb4BOSSx8_G9Ec2ONZY12Dmu4TwIy8"
+        "https://www.googleapis.com/blogger/v3/blogs/4209688436429267338/posts?labels=hip+hop+chileno,videos&maxResults=12&nextPageToken&key=AIzaSyBenGb4BOSSx8_G9Ec2ONZY12Dmu4TwIy8"
         ).then((response) => response.json())
         .then(data => { 
             setPost(data.items);
+          
+
             setToken(data.nextPageToken);
+            
         })
     };
 
@@ -41,24 +54,31 @@ const exampleModal = useRef();
 
     const abrirModal = (title, url) => { 
         setInfo({ titulo: title, urlVideo: ' ' });
-       
         setTimeout(() => {
             setInfo({ titulo: title, urlVideo: url });
-          }, 500);
+        }, 500);
         
         modal.show();
     }
 
+
+   
+
+
     useEffect(() => {
+        
         getApiData();
         setModal(
             new Modal(exampleModal.current)
         )
-       
+     
     }, [])
 
 return (
-        <Provider value={{post, setPost}}>
+    <>
+    <Provider value={{post, setPost}}>
+            
+            
             <div id="posts" className="row m-0">
                 {post && post.map((item) => 
                     (
@@ -74,6 +94,7 @@ return (
             <BotonVermas token={token}  setToken={setToken}></BotonVermas>
             <ModalB modal={modal} exampleModal={exampleModal} info={info} />
         </Provider>
+    </>
  
     )
 }
